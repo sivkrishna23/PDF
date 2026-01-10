@@ -1,0 +1,7 @@
+2026/01/10-18:24:09.079 31c4 Reusing MANIFEST D:\PDF\test-profile\Default\Local Storage\leveldb/MANIFEST-000001
+2026/01/10-18:24:09.084 31c4 Recovering log #6
+2026/01/10-18:24:09.085 31c4 Level-0 table #9: started
+2026/01/10-18:24:09.090 31c4 Level-0 table #9: 28839 bytes OK
+2026/01/10-18:24:09.090 31c4 Recovering log #8
+2026/01/10-18:24:09.093 31c4 Reusing old log D:\PDF\test-profile\Default\Local Storage\leveldb/000008.log 
+2026/01/10-18:24:09.096 31c4 Delete type=0 #6

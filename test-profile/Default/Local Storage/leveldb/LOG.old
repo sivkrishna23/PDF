@@ -1,0 +1,10 @@
+2026/01/10-18:14:58.789 2af4 Creating DB D:\PDF\test-profile\Default\Local Storage\leveldb since it was missing.
+2026/01/10-18:14:58.806 2af4 Reusing MANIFEST D:\PDF\test-profile\Default\Local Storage\leveldb/MANIFEST-000001
+2026/01/10-18:19:36.174 4f10 Level-0 table #5: started
+2026/01/10-18:19:36.180 4f10 Level-0 table #5: 27483 bytes OK
+2026/01/10-18:19:36.183 4f10 Delete type=0 #3
+2026/01/10-18:20:29.127 4f10 Level-0 table #7: started
+2026/01/10-18:20:29.134 4f10 Level-0 table #7: 25532 bytes OK
+2026/01/10-18:20:29.141 4f10 Delete type=0 #4
+2026/01/10-18:20:44.914 3e58 Level-0 table #9: started
+2026/01/10-18:20:44.921 3e58 Level-0 table #9: 28839 bytes OK

@@ -1,0 +1,45 @@
+{
+    "manifest_version": 3,
+    "name": "Personal Data Firewall",
+    "version": "1.0.0",
+    "author": "Venkata Siva Krishna Aakisetty",
+    "description": "Observe, control, and enforce personal data flows.",
+    "permissions": [
+        "storage",
+        "activeTab",
+        "scripting",
+        "webRequest",
+        "declarativeNetRequest",
+        "declarativeNetRequestWithHostAccess"
+    ],
+    "host_permissions": [
+        "<all_urls>"
+    ],
+    "background": {
+        "service_worker": "assets/background.js",
+        "type": "module"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "assets/content.js"
+            ]
+        }
+    ],
+    "action": {
+        "default_popup": "src/popup/index.html",
+        "default_icon": {
+            "16": "icons/icon-16.png",
+            "48": "icons/icon-48.png",
+            "128": "icons/icon-128.png"
+        }
+    },
+    "icons": {
+        "16": "icons/icon-16.png",
+        "48": "icons/icon-48.png",
+        "128": "icons/icon-128.png"
+    }
+}
