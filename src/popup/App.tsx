@@ -9,7 +9,7 @@ function App() {
         loadEvents();
     }, [loadEvents]);
 
-    const openDashboard = () => {
+    const openDashboard = (tab?: string) => {
         // In manual build, it might be flat or nested, check build output.
         // Actually with the manual config: entryFileNames: 'assets/[name].js'.
         // But the HTML files are usually at root or src structure depending on vite.
@@ -19,7 +19,8 @@ function App() {
         // Based on vite config input: dashboard: 'src/dashboard/index.html'.
         // Vite build usually outputs `dist/src/dashboard/index.html` OR `dist/dashboard.html`.
         // Let's check build behavior. For now, try specific path.
-        chrome.tabs.create({ url: chrome.runtime.getURL('src/dashboard/index.html') });
+        const url = chrome.runtime.getURL('src/dashboard/index.html') + (tab ? `#${tab}` : '');
+        chrome.tabs.create({ url });
     };
 
     return (
@@ -112,7 +113,7 @@ function App() {
                             </div>
                         ))}
                     </div>
-                    <button onClick={openDashboard} className="w-full mt-3 py-2 text-xs font-medium text-indigo-600 bg-indigo-50 rounded hover:bg-indigo-100 transition-colors">
+                    <button onClick={() => openDashboard('dashboard')} className="w-full mt-3 py-2 text-xs font-medium text-indigo-600 bg-indigo-50 rounded hover:bg-indigo-100 transition-colors">
                         View Full Dashboard
                     </button>
                 </div>
@@ -120,15 +121,24 @@ function App() {
 
             {/* Navigation */}
             <nav className="bg-white border-t border-slate-200 p-2 flex justify-around text-xs font-medium text-slate-500">
-                <button className="flex flex-col items-center space-y-1 p-2 hover:text-indigo-600 transition-colors text-indigo-600">
+                <button
+                    onClick={() => openDashboard('data-flow')}
+                    className="flex flex-col items-center space-y-1 p-2 hover:text-indigo-600 transition-colors"
+                >
                     <Activity className="w-5 h-5" />
                     <span>Activity</span>
                 </button>
-                <button className="flex flex-col items-center space-y-1 p-2 hover:text-indigo-600 transition-colors">
+                <button
+                    onClick={() => openDashboard('rules')}
+                    className="flex flex-col items-center space-y-1 p-2 hover:text-indigo-600 transition-colors"
+                >
                     <Lock className="w-5 h-5" />
                     <span>Rules</span>
                 </button>
-                <button className="flex flex-col items-center space-y-1 p-2 hover:text-indigo-600 transition-colors">
+                <button
+                    onClick={() => openDashboard('settings')}
+                    className="flex flex-col items-center space-y-1 p-2 hover:text-indigo-600 transition-colors"
+                >
                     <Settings className="w-5 h-5" />
                     <span>Settings</span>
                 </button>
