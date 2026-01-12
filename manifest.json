@@ -6,11 +6,8 @@
     "description": "Observe, control, and enforce personal data flows.",
     "permissions": [
         "storage",
-        "activeTab",
-        "scripting",
         "webRequest",
-        "declarativeNetRequest",
-        "declarativeNetRequestWithHostAccess"
+        "declarativeNetRequest"
     ],
     "host_permissions": [
         "<all_urls>"
